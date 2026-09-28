@@ -1,0 +1,77 @@
+*{box-sizing:border-box}
+:root{--pink:#ff5577;--soft:#fff1f4;--text:#38242a}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  padding:22px; color:var(--text);
+  font-family:Poppins,system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 15% 15%,#ffd9e2 0 8%,transparent 28%),
+    radial-gradient(circle at 85% 85%,#ffdce5 0 7%,transparent 27%),
+    linear-gradient(135deg,#fff8f9,#ffe9ee);
+}
+.card{
+  width:min(720px,100%); max-height:calc(100vh - 44px); overflow:auto;
+  padding:34px 28px 30px; text-align:center;
+  border:2px solid rgba(255,85,119,.15); border-radius:32px;
+  background:rgba(255,255,255,.78); backdrop-filter:blur(12px);
+  box-shadow:0 25px 80px rgba(180,70,95,.18);
+  position:relative; z-index:2;
+}
+.tiny{font-size:14px;font-weight:600;color:#ff6c88;margin-bottom:5px}
+h1{font-family:Pacifico,cursive;font-size:clamp(44px,10vw,76px);line-height:1;margin:0 0 22px;color:#ef496c}
+h2{color:#ef496c;font-size:24px;margin:22px 0 6px}
+p{font-size:16px;line-height:1.75;margin:8px 0}
+.hinglish{margin-top:24px}
+.smile{font-weight:600;margin-top:24px}
+.buttons{
+  position:relative; min-height:160px; margin-top:22px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+}
+button{
+  border:0; font:600 16px Poppins,sans-serif; cursor:pointer;
+  -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+.yes{
+  color:white; padding:16px 27px; border-radius:999px;
+  background:linear-gradient(135deg,#ff5275,#ff7995);
+  box-shadow:0 10px 25px rgba(255,82,117,.3);
+  transition:transform .2s, box-shadow .2s;
+}
+.yes:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,82,117,.36)}
+.run-zone{position:relative;width:min(350px,90%);height:65px}
+.nope{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  color:#514047; padding:13px 22px; border-radius:999px;
+  background:#fff; border:2px solid #ffd0da;
+  box-shadow:0 7px 20px rgba(90,45,55,.12);
+  transition:left .16s ease, top .16s ease, transform .16s ease;
+  white-space:nowrap;
+}
+.tease{font-size:13px;color:#a26b77;min-height:22px}
+.success{
+  position:fixed;inset:0;z-index:10;display:grid;place-items:center;
+  padding:22px;background:rgba(255,220,228,.76);backdrop-filter:blur(8px);
+}
+.hidden{display:none}
+.success-card{
+  width:min(430px,100%);text-align:center;padding:40px 25px;
+  border-radius:30px;background:white;box-shadow:0 30px 80px rgba(150,60,85,.25);
+  animation:pop .45s ease;
+}
+.big-heart{font-size:70px;animation:pulse 1s infinite}
+.success-card h2{font-size:30px;margin-top:8px}
+.small{color:#9a6873}
+.success-card button{margin-top:15px;padding:12px 18px;border-radius:999px;background:#ffe3e9;color:#d73f60}
+@keyframes pop{from{transform:scale(.75);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.heart{
+  position:fixed;z-index:1;bottom:-30px;opacity:.55;
+  animation:float linear forwards;pointer-events:none
+}
+@keyframes float{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@media(max-width:520px){
+  .card{padding:27px 19px 24px;border-radius:26px}
+  p{font-size:14px}.buttons{min-height:150px}
+  .yes{font-size:14px;padding:14px 20px}.nope{font-size:14px}
+}
